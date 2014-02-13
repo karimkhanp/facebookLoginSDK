@@ -1,4 +1,3 @@
-
 <html>
 	<head>
 		<title>ThenWat</title>
@@ -14,7 +13,7 @@
 			.middle{
 				background-color:Yellow;
 			}
-			
+			sta
 			.left{
 				background-color:Green;
 			}
@@ -100,10 +99,10 @@
 					//var a = JSON.parse(json);
 					var picture = "https://graph.facebook.com/"+userid+"/picture?type = small";
 					// alert(picture);
-					//Here I have used ajax call to store the user profile info in db. You can use as per your need
+					//Here I have used ajax call to store the user profile info in db. You can use it as per your need
 					$.post('user_record.php',{ name: name, email: email, userid:userid, picture:picture, gender: gender, locale: locale, city: city, link: link}, function(data)
 					{
-						var $form = $("<form id = 'form1' method = 'post' action = 'start.php'></form>"); //start.php perform mysql db connection to store data in tables
+						var $form = $("<form id = 'form1' method = 'post' action = 'start.php'></form>"); //After storing data into userrecord.php redirecting to new page start.php. You can remove this if you want to stay on same page	
 						$form.append('<input type = "hidden" name = "userid" value = "'+userid+'" />');
 						$('body').append($form);
 						window.form1.submit();
